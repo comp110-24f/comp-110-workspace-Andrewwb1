@@ -23,7 +23,7 @@ def tea_bags(people: int) -> int:
 
 def treats(people: int) -> int:
     """Inputs number of people and outputs numbers of treats needed"""
-    return int(tea_bags(people) * 1.5)
+    return int(tea_bags(people=people) * 1.5)
 
 
 def cost(tea_count: int, treat_count: int) -> float:
