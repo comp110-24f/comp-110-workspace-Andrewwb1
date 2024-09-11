@@ -22,7 +22,7 @@ def wake_up(alarm: bool) -> str:
         return "Kepp sleeping."
 
 
-print(wake_up(alarm=False))
+# print(wake_up(alarm=False))
 
 
 """CL07 Last Slide Practice"""
@@ -35,7 +35,24 @@ def check_first_letter(word: str, letter: str) -> str:
     else:
         return "No Match!"
 
+    # print(
+    check_first_letter(
+        word="happy", letter="s"
+    )  # so if the word is 'happy' and letter is 's' then it should be false since 'happy' doesn't start with letter 's'
 
-print(
-    check_first_letter(word="happy", letter="s")
-)  # so if the word is 'happy' and letter is 's' then it should be false since 'happy' doesn't start with letter 's'
+
+"""CL08 Last Slide Practice - elif"""
+
+
+def get_weather_report() -> str:
+    """prompts user for weather and then outputs proper action"""
+    weather: str = input("What is the Weather?")  # prompts user for the weather
+    if (
+        weather == "rainy" or weather == "cold"
+    ):  # if it is rainy or cold will print following
+        print("Bring a jacket!")
+    elif weather == "hot":  # use second option for option
+        print("Keep cool out there!")
+    else:  # third option of if input is not recognized as one of the others
+        "I don't recognize this weather."
+    return weather  # just returns your intput
