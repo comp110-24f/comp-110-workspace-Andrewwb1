@@ -12,8 +12,6 @@ def num_instances(phrase: str, search_char: str) -> int:
             str(phrase[index]) == search_char
         ):  # if the letter at index is the search character adds to counter
             count += 1
-        else:
-            count += 0  # otherwise doesn't add to counter
         index += 1
     return count  # returns the count
 
