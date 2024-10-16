@@ -35,10 +35,14 @@ def sub(list1: list[int], idx1: int, idx2: int) -> list[int]:
 
 
 def add_at_index(list1: list[int], num1: int, idx1: int) -> None:
- """modifies list1 by adding elem1 at idx1 to the list"""
- if idx1 < 0 or idx1 > len(list1):  # throws error if index is out of range
-  raise IndexError("Index is out of bounds for the input list")
- list1.append(num1) #adds target number to end of list
- for elem in list1:
-     if 
-     
+    """modifies list1 by adding elem1 at idx1 to the list"""
+    if idx1 < 0 or idx1 > len(list1):  # throws error if index is out of range
+        raise IndexError("Index is out of bounds for the input list")
+    list1.append(0)  # add space to end of list
+    for idx in range(
+        idx1 + 1, len(list1)
+    ):  # shifts down all elements by one starting after target idx
+        list1[idx] = list1[
+            idx - 1
+        ]  # now have two occuences of same number at idx1 and idx+1
+    list1[idx1] = num1  # mutate element at idx1 to input target int
