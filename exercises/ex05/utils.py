@@ -39,10 +39,10 @@ def add_at_index(list1: list[int], num1: int, idx1: int) -> None:
     if idx1 < 0 or idx1 > len(list1):  # throws error if index is out of range
         raise IndexError("Index is out of bounds for the input list")
     list1.append(0)  # add space to end of list
-    for idx in range(
-        idx1 + 1, len(list1)
-    ):  # shifts down all elements by one starting after target idx
-        list1[idx] = list1[
-            idx - 1
-        ]  # now have two occuences of same number at idx1 and idx+1
+    idx: int = len(list1) - 1  # starts index at end of list
+    while (
+        idx > idx1
+    ):  # while beyond the target index position, shift down every element
+        list1[idx] = list1[idx - 1]
+        idx -= 1  # subtract one from the index to move backwards in list
     list1[idx1] = num1  # mutate element at idx1 to input target int
