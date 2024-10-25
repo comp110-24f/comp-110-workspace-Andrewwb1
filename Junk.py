@@ -72,5 +72,4 @@ def double_display(y: int):
 # double_display(2)
 
 # if __name__ == "__main__":
-   # print(double(3))
-
+# print(double(3))

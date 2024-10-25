@@ -24,7 +24,7 @@ ice_cream["mint"] += 1
 ice_cream.pop("strawberry")
 
 # Test if a key is in the dictionary:
-print("strawberry" in ice_cream)  # pritns false
+print("strawberry" in ice_cream)  # prints false
 print("vanilla" in ice_cream)  # prints true
 
 # Loop through items using for-in loops
