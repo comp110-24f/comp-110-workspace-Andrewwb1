@@ -13,7 +13,7 @@ def invert(dict1: dict[str, str]) -> dict[str, str]:
     return output
 
 
-def favorite_colors(cols: dict[str, str]) -> str:
+def favorite_color(cols: dict[str, str]) -> str:
     """returns color that is most popular (if tie one that appears first)"""
     counts: dict[str, int] = {}  # stores counts of all colors mentioned
     winner_count: int = 0  # output winning color count
@@ -61,16 +61,16 @@ def alphabetizer(inp: list[str]) -> dict[str, list[str]]:
     return output
 
 
-def update_attendance(
-    old_attend: dict[str, list[str]], day: str, student: str
-) -> dict[str, list[str]]:
+def update_attendance(old_attend: dict[str, list[str]], day: str, student: str) -> None:
     """updates old attendance sheet with new students on certain days"""
     if (
         day in old_attend
     ):  # if day already key in old_attend then adds student to list value
-        old_attend[day] += [student]
+        if (
+            student not in old_attend[day]
+        ):  # only adds student not already in list that day
+            old_attend[day] += [student]
     else:
         old_attend[day] = [
             student
         ]  # otherwise writes new key value pair of day and student as list
-    return old_attend  # mutating input
