@@ -147,3 +147,23 @@ def double_display(y: int):
 
 
 # short cut for multi line comment and uncomment [cmd + /] including the plus
+
+
+class Node:
+    def __init__(self, value: list[int], next: Node | None):
+        self.value = value  # A list of integers
+        # Either another Node or None
+        if next is None:
+            self.next = None
+        else:
+            self.next = next
+
+
+def sum_node_values(head: Node | None) -> int | None:
+    if head is None:
+        return 0
+    else:
+        sum: int = 0
+        for elem in head.value:
+            sum += elem
+        return sum + sum_node_values(head.next)
